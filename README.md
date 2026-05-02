@@ -1,74 +1,60 @@
 # COMP8221 Assignment 1: DDIM Diffusion Model
 
-Unit: COMP8221 Advanced Machine Learning
+**Unit:** COMP8221 Advanced Machine Learning  
+**Assignment:** Assignment 1  
+**Option Selected:** Option 3 – Diffusion Models  
+**Model:** Denoising Diffusion Implicit Model (DDIM)  
+**Framework:** PyTorch  
 
-Assignment: Assignment 1
-
-Selected option: Option 3 Diffusion Models
-
-Selected model: DDIM
-
-Framework: PyTorch
+---
 
 ## Project Overview
 
-This project is prepared for implementing a Denoising Diffusion Implicit Model (DDIM) for COMP8221 Assignment 1.
+This project implements a DDIM-based diffusion model for image generation as part of COMP8221 Assignment 1.
 
-The core model will be implemented from scratch using `torch.nn` layers. No high-level generative model libraries such as HuggingFace `diffusers`, `timm`, or ready-made diffusion/model packages will be used.
+The objective is to build a complete diffusion pipeline from scratch, including:
+- Forward diffusion (noise addition)
+- Reverse sampling (DDIM)
+- Noise prediction network (U-Net with time embeddings)
+- Training and evaluation pipeline
 
-External libraries are reserved for appropriate support tasks such as dataset loading, plotting, augmentation, and evaluation metrics.
+All core components are implemented using standard `torch.nn` layers.  
+No high-level generative model libraries (e.g., HuggingFace `diffusers`, `timm`) are used.
+
+External libraries are used only for:
+- Dataset handling (CIFAR-10)
+- Visualization and plotting
+- Quantitative evaluation (FID)
+
+---
+
+## Key Features
+
+- DDIM implementation (non-Markovian sampling)
+- U-Net architecture with sinusoidal time embeddings
+- Noise prediction using MSE loss
+- CIFAR-10 dataset with preprocessing
+- Loss curve visualization
+- Generated image samples from noise
+- Reverse diffusion visualization
+- FID score evaluation
+
+---
 
 ## Folder Structure
 
 ```text
 COMP8221_Assignment1/
 |-- notebook/
-|   `-- 2026S1_COMP8221_Assignment1_STUDENTID_NAME.ipynb
-|-- report/
-|   `-- .gitkeep
-|-- src/
-|   |-- __init__.py
-|   |-- dataset.py
-|   |-- model.py
-|   |-- diffusion.py
-|   |-- train.py
-|   |-- evaluate.py
-|   `-- visualize.py
+|   `-- 2026S1_COMP8221_Assignment1_MD_IFTHEKHER_UDDIN_CHY.ipynb
 |-- outputs/
-|   `-- .gitkeep
-|-- checkpoints/
-|   `-- .gitkeep
-|-- data/
-|   `-- README.md
+|   |-- real_samples_grid.png
+|   |-- forward_noising_grid.png
+|   |-- loss_curve.png
+|   |-- generated_samples_grid.png
+|   |-- reverse_diffusion_grid.png
+|   |-- fid_score.txt
+|   `-- experiment_summary.csv
 |-- requirements.txt
 |-- README.md
 `-- references.md
-```
-
-## Setup Instructions
-
-1. Install requirements:
-
-```bash
-pip install -r requirements.txt
-```
-
-2. Open the notebook:
-
-```bash
-jupyter notebook notebook/2026S1_COMP8221_Assignment1_STUDENTID_NAME.ipynb
-```
-
-3. Run cells from top to bottom.
-
-## Expected Future Outputs
-
-The following files are expected to be generated later during implementation and experimentation:
-
-- `real_samples_grid.png`
-- `forward_noising_grid.png`
-- `loss_curve.png`
-- `generated_samples_grid.png`
-- `reverse_diffusion_grid.png`
-- `fid_score.txt`
-- `experiment_summary.csv`
