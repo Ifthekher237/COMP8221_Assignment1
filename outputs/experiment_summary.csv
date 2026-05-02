@@ -1,0 +1,22 @@
+Item,Value
+Model,DDIM
+Noise prediction network,SimpleUNet
+Dataset,CIFAR-10
+Image size,32x32
+Channels,3
+Training timesteps,1000
+DDIM sampling timesteps,50
+Batch size,64
+Learning rate,0.0002
+Optimizer,AdamW
+Weight decay,0.0001
+Epochs completed,10
+Final training loss,0.033905175935201856
+Final validation loss,0.033337020222097634
+FID score,1.6470531225204468
+FID samples,64
+Device,mps
+Checkpoint path,../checkpoints/ddim_unet_final.pt
+Generated sample grid,../outputs/generated_samples_grid.png
+Reverse diffusion grid,../outputs/reverse_diffusion_grid.png
+Loss curve,../outputs/loss_curve.png

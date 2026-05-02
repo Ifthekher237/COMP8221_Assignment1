@@ -1,0 +1,5 @@
+FID score: 1.647053
+Number of samples used: 64
+Sampling timesteps: 50
+Lower FID is better.
+This score is approximate because the sample count is small and limited training may affect image quality.
